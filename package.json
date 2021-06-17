@@ -1,0 +1,30 @@
+{
+  "name": "ts-websocket-server-protocol",
+  "version": "1.0.0",
+  "description": "An implementation of the websocket protocol for people wanting to build their own websocket server",
+  "main": "out/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WernerLDev/ts-websocket-server-protocol.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Websockets"
+  ],
+  "author": "Werner",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/WernerLDev/ts-websocket-server-protocol/issues"
+  },
+  "homepage": "https://github.com/WernerLDev/ts-websocket-server-protocol#readme",
+  "devDependencies": {
+    "typescript": "^4.3.3"
+  },
+  "dependencies": {
+    "@types/sha1": "^1.1.2",
+    "sha1": "^1.1.1"
+  }
+}
