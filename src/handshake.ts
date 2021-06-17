@@ -6,7 +6,7 @@ const generateResponseHash = (key: string) => {
   ).toString("base64");
 };
 
-export const HandshakeResponse = (key: string) => {
+export const generateHandshake = (key: string) => {
   return (
     "HTTP/1.1 101 Web Socket Protocol Handshake\r\n" +
     "Upgrade: WebSocket\r\n" +

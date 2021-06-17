@@ -1,5 +1,5 @@
-export const encodeTextFrame = (data: string): Buffer => {
-  const payloadLength = Buffer.byteLength(data);
+export const encodeFrame = (data: Buffer): Buffer => {
+  const payloadLength = data.length;
 
   let offset = 2;
 
@@ -13,7 +13,7 @@ export const encodeTextFrame = (data: string): Buffer => {
   buffer.writeUInt8(0x81, 0);
   buffer.writeUInt8(payloadLength, 1);
 
-  buffer.write(data, offset);
+  data.copy(buffer, offset);
 
   return buffer;
 };

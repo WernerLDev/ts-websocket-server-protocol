@@ -47,7 +47,7 @@ server.on("upgrade", (req: http.IncomingMessage, socket: net.Socket) => {
     const frame = ws.decodeFrame(data);
     console.log(frame.payloadData.toString());
 
-    socket.write(ws.encodeTextFrame("Hi webbrowser"));
+    socket.write(ws.encodeFrame(Buffer.from("Hi webbrowser")));
   });
 });
 

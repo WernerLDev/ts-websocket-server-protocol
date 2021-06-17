@@ -1,2 +1,2 @@
-export declare const HandshakeResponse: (key: string) => string;
+export declare const generateHandshake: (key: string) => string;
 //# sourceMappingURL=handshake.d.ts.map

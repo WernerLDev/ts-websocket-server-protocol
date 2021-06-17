@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.encodeTextFrame = void 0;
-var encodeTextFrame = function (data) {
-    var payloadLength = Buffer.byteLength(data);
+exports.encodeFrame = void 0;
+var encodeFrame = function (data) {
+    var payloadLength = data.length;
     var offset = 2;
     var framelength = 2 + payloadLength;
     if (payloadLength > 125) {
@@ -12,8 +12,8 @@ var encodeTextFrame = function (data) {
     var buffer = Buffer.alloc(framelength);
     buffer.writeUInt8(0x81, 0);
     buffer.writeUInt8(payloadLength, 1);
-    buffer.write(data, offset);
+    data.copy(buffer, offset);
     return buffer;
 };
-exports.encodeTextFrame = encodeTextFrame;
+exports.encodeFrame = encodeFrame;
 //# sourceMappingURL=outgoing.js.map

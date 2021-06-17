@@ -1,3 +1,3 @@
 /// <reference types="node" />
-export declare const encodeTextFrame: (data: string) => Buffer;
+export declare const encodeFrame: (data: Buffer) => Buffer;
 //# sourceMappingURL=outgoing.d.ts.map
