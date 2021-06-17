@@ -16,6 +16,8 @@ This will add the latest version to your node.js project.
 
 ### Example server
 
+This package contains 3 methods that you can use. `generateHandshake`, `decodeFrame` and `encodeFrame`. The first one is to generate the initial handshake when you receive a request from a web browser, the other 2 can be used to encode/decode websocket frames.
+
 A simple websocket server could be implemented like this:
 
 ```typescript
@@ -41,7 +43,7 @@ server.on("upgrade", (req: http.IncomingMessage, socket: net.Socket) => {
     return;
   }
 
-  socket.write(ws.HandshakeResponse(req.headers["sec-websocket-key"] ?? ""));
+  socket.write(ws.generateHandshake(req.headers["sec-websocket-key"] ?? ""));
 
   socket.on("data", (data) => {
     const frame = ws.decodeFrame(data);
