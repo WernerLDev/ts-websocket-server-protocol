@@ -21,11 +21,7 @@ A simple websocket server could be implemented like this:
 ```typescript
 import * as http from "http";
 import * as net from "net";
-import {
-  HandshakeResponse,
-  decodeFrame,
-  encodeTextFrame,
-} from "ts-websocket-server-protocol";
+import * as ws from "ts-websocket-server-protocol";
 
 const port = 1234;
 const host = "127.0.0.1";
@@ -45,13 +41,13 @@ server.on("upgrade", (req: http.IncomingMessage, socket: net.Socket) => {
     return;
   }
 
-  socket.write(HandshakeResponse(req.headers["sec-websocket-key"] ?? ""));
+  socket.write(ws.HandshakeResponse(req.headers["sec-websocket-key"] ?? ""));
 
   socket.on("data", (data) => {
-    const frame = decodeFrame(data);
+    const frame = ws.decodeFrame(data);
     console.log(frame.payloadData.toString());
 
-    socket.write(encodeTextFrame("Hi webbrowser"));
+    socket.write(ws.encodeTextFrame("Hi webbrowser"));
   });
 });
 
