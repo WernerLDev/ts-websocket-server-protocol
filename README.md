@@ -1,6 +1,8 @@
 # ts-websocket-server-protocol
 
-This is an (incomplete) implementation of the websocket server which can be used if you want to build your own websocket server. I have created this just for shits and giggles and do not recommend using this in production.
+This is an (incomplete) implementation of the websocket protocol. This package can be used if you want to build your own websocket server. I have created this just for shits and giggles and do not recommend using this in production.
+
+The protocol is implemented using typescript so obviously you will need to write your server in either JavaScript or TypeScript in order to use this package.
 
 ## Installation and usage
 
